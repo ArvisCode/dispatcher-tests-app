@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BASE_URL } from "./BASE_URL";
 
 export const authApi = createApi({
@@ -55,8 +55,8 @@ export const authApi = createApi({
 });
 
 export const {
+  useUserCurrentQuery,
   useUserSignupMutation,
   useUserLoginMutation,
-  useUserCurrentQuery,
   useUserLogoutMutation,
 } = authApi;
