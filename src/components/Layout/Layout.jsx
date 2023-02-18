@@ -4,6 +4,7 @@ import { Container } from "../Container/Container";
 import { Loader } from "../Loader/Loader";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
+import { MainBox } from "../Container/Container.styled";
 
 export const Layout = () => {
   return (
@@ -11,7 +12,9 @@ export const Layout = () => {
       <Suspense fallback={<Loader />}>
         <Container>
           <Header />
-          <Outlet />
+          <MainBox>
+            <Outlet />
+          </MainBox>
           <Footer />
         </Container>
       </Suspense>
