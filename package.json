@@ -2,6 +2,7 @@
   "name": "dispatcher-tests-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ArvisCode.github.io/dispatcher-tests-app/",
   "dependencies": {
     "@emotion/styled": "^11.10.5",
     "@reduxjs/toolkit": "^1.9.2",
@@ -24,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "eslintConfig": {
     "extends": [
