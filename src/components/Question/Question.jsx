@@ -10,6 +10,7 @@ export const Question = ({
   setRight,
   right,
   result,
+  complete,
 }) => {
   return (
     <>
@@ -27,6 +28,7 @@ export const Question = ({
             index_true_answer={index_true_answer}
             right={right}
             result={result}
+            complete={complete}
           />
         )}
       </form>

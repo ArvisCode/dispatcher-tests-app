@@ -1,3 +1,5 @@
+import { AnswerText, AnswerTextTrue } from "./Question.styled";
+
 export const Answers = ({
   answers,
   text,
@@ -7,6 +9,7 @@ export const Answers = ({
   idx,
   right,
   result,
+  complete,
 }) => {
   const res = [...result];
   const raw = [...right];
@@ -31,7 +34,15 @@ export const Answers = ({
               value={answer}
               onChange={handleChange}
             />
-            {answer}
+            {complete ? (
+              index === index_true_answer ? (
+                <AnswerTextTrue>{answer}</AnswerTextTrue>
+              ) : (
+                <AnswerText>{answer}</AnswerText>
+              )
+            ) : (
+              <AnswerText>{answer}</AnswerText>
+            )}
           </label>
         ))}
     </>

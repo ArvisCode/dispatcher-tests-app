@@ -13,6 +13,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import { currentUser } from "./sliceUser";
 import { currentToken } from "./sliceToken";
+import { tasksApi } from "./taskApi";
 
 const tokenPersistConfig = {
   key: "root",
@@ -22,6 +23,7 @@ const tokenPersistConfig = {
 
 const rootReducer = combineReducers({
   [authApi.reducerPath]: authApi.reducer,
+  [tasksApi.reducerPath]: tasksApi.reducer,
   token: currentToken.reducer,
   userName: currentUser.reducer,
 });
@@ -35,7 +37,9 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(authApi.middleware),
+    })
+      .concat(authApi.middleware)
+      .concat(tasksApi.middleware),
 });
 
 export const persistor = persistStore(store);
